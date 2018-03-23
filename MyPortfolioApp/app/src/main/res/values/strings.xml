@@ -7,4 +7,12 @@
     <string name="material_button_label">Make Your App Material</string>
     <string name="ubiquitous_button_label">Go Ubiquitous</string>
     <string name="capstone_button_label">Capstone: My Own App</string>
+
+    <string name="popular_toast">This button will launch my Popular Movies app</string>
+    <string name="stock_toast">This button will launch my Stock Hawk app</string>
+    <string name="buildit_toast">This button will launch my Build It Bigger app</string>
+    <string name="material_toast">This button will launch my Make Your App Material app</string>
+    <string name="ubiquitous_toast">This button will launch my Go Ubiquitous app</string>
+    <string name="capstone_toast">This button will launch my Make Your App Material app</string>
+    <string name="where_is_my_button_toast">This should not happen</string>
 </resources>
