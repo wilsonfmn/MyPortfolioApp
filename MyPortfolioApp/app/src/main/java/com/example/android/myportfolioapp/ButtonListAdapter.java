@@ -3,16 +3,13 @@ package com.example.android.myportfolioapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,29 +44,32 @@ public class ButtonListAdapter extends ArrayAdapter<String> {
 
                 Context parentContext = v.getContext();
                 Resources contextResources = parentContext.getResources();
-                String buttonId = ((Button) v).getText().toString();
+                String buttonLabel = ((Button) v).getText().toString();
 
-                Toast simpleToast;
-
-                if (buttonId == contextResources.getString(R.string.popular_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.popular_toast), Toast.LENGTH_SHORT);
-                } else if (buttonId == contextResources.getString(R.string.stock_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.stock_toast), Toast.LENGTH_SHORT);
-                } else if (buttonId == contextResources.getString(R.string.buildit_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.buildit_toast), Toast.LENGTH_SHORT);
-                } else if (buttonId == contextResources.getString(R.string.material_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.material_toast), Toast.LENGTH_SHORT);
-                } else if (buttonId == contextResources.getString(R.string.ubiquitous_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.ubiquitous_toast), Toast.LENGTH_SHORT);
-                } else if (buttonId == contextResources.getString(R.string.capstone_button_label)) {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.capstone_toast), Toast.LENGTH_SHORT);
+                if (buttonLabel.equals(contextResources.getString(R.string.popular_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.popular_toast));
+                } else if (buttonLabel.equals(contextResources.getString(R.string.stock_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.stock_toast));
+                } else if (buttonLabel.equals(contextResources.getString(R.string.buildit_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.buildit_toast));
+                } else if (buttonLabel.equals(contextResources.getString(R.string.material_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.material_toast));
+                } else if (buttonLabel.equals(contextResources.getString(R.string.ubiquitous_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.ubiquitous_toast));
+                } else if (buttonLabel.equals(contextResources.getString(R.string.capstone_button_label))) {
+                    pressToToast(parentContext, contextResources.getString(R.string.capstone_toast));
                 } else {
-                    simpleToast = Toast.makeText(parentContext, contextResources.getString(R.string.where_is_my_button_toast), Toast.LENGTH_SHORT);
+                    pressToToast(parentContext, contextResources.getString(R.string.where_is_my_button_toast));
                 }
-                simpleToast.show();
             }
         });
 
         return view;
     }
+
+    private void pressToToast(Context parentContext, String message) {
+        Toast simpleToast = Toast.makeText(parentContext, message, Toast.LENGTH_SHORT);
+        simpleToast.show();
+    }
+
 }
